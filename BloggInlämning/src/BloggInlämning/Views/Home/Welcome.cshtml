@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <meta http-equiv="refresh" content="3; @Url.Action("Index", "Home")"/>
+    <meta http-equiv="refresh" content="3; @Url.Action("Index", "Home")" />
 </head>
 <body>
     <div class="container">
@@ -31,8 +31,10 @@
                 <div class="jumbotron">
                     <h1>Welcome back,</h1>
                     <h2>@Model.Name!</h2>
-                    <p class="text-center">You will be redirected in 3 seconds</p>
-
+                    <p class="text-right">
+                        Du dirigeras vidare om 3 sekunder
+                    </p>
+                    <a asp-action="Index" asp-controller="Home"><button class="btn btn-default pull-right">Annars tryck här</button></a>
                 </div>
             </div>
         </div>
