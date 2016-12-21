@@ -1,0 +1,45 @@
+﻿@model BloggInlämning.ViewModels.ViewModel
+
+
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col-md-2 pull-right">
+
+            <div id="img-me" class="affix" style="margin-right: 20px;">
+                <div class="thumbnail">
+                    <img class="img-rounded" src="~/images/14053684_10153824331554499_8787952534585534618_o.jpg" />
+                    <div class="caption">
+                        <h4>Marcus Hultkrantz</h4>
+                        <p class="post-text">
+                            I love powerlifting and study Programutveckling .NET at Nackadmin in Solna. This
+                            blog is about my life!
+                        </p>
+                        <h4>
+                            Contact me:
+                        </h4>
+                        <p>marcus.hultkrantz@live.se</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @foreach (var post in Model.BloggPosts)
+        {
+            <div id="header" class="col-md-9 pull-left">
+                <a class="text-uppercase text-center italic" asp-controller="Home" asp-action="PostByCategory" asp-route-category="@post.CategoryId">@post.Category.Name</a>
+                <h1>@post.Heading</h1>
+                <p class="post-date">@post.BloggDate.ToString("f")</p>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@post.Id"><span id="editLink" class="btn btn-link italic">Redigera inlägg</span></a>
+                <p class="post-text">@post.Text</p>
+            </div>
+
+            <div class="col-md-9 pull-left" id="footer">
+                <div class="container-fluid post-footer text-center">
+                    <a href="https://www.facebook.com/marcus.hultkrantz"><span data-toggle="tooltip" title="Facebook" class="share-box"><i class="fa fa-facebook"></i></span></a>
+                    <a href="https://www.instagram.com/bultkrantz/"><span data-toggle="tooltip" title="Instagram" class="share-box"><i class="fa fa-instagram"></i></span></a>
+                    <a href="https://www.linkedin.com/in/marcus-hultkrantz-838641129"><span data-toggle="tooltip" title="LinkedIn" class="share-box"><i class="fa fa-linkedin"></i></span></a>
+                    <a href="https://github.com/bultkrantz"><span data-toggle="tooltip" title="Github" class="share-box"><i class="fa fa-github"></i></span></a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
